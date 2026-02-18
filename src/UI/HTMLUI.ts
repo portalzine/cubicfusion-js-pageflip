@@ -56,9 +56,9 @@ export class HTMLUI extends UI {
 
     public update(): void {
         this.app.getRender().update();
-        if(this.app.getOrientation() === Orientation.LANDSCAPE && this.app.getPageCollection().getCurrentPageIndex() === 0) {
+        if(this.app.getOrientation() === Orientation.LANDSCAPE && this.app.getSettings().showCover && this.app.getPageCollection().getCurrentPageIndex() === 0) {
             this.firstPageCenter();
-        } else if(this.app.getOrientation() === Orientation.LANDSCAPE && this.app.getPageCollection().getCurrentPageIndex() === this.app.getPageCollection().getPages().length - 1) {
+        } else if(this.app.getOrientation() === Orientation.LANDSCAPE && this.app.getSettings().showCover && this.app.getPageCollection().getCurrentPageIndex() === this.app.getPageCollection().getPages().length - 1) {
             this.firstPageEndCenter();
         }else {
             this.firstPageCenterReverse();

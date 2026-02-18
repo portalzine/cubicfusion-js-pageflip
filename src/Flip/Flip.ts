@@ -362,7 +362,7 @@ export class Flip {
             if (isTurned) {
                 if (this.calc.getDirection() === FlipDirection.BACK) {
                     if (this.app.getOrientation() === Orientation.LANDSCAPE) {
-                        if (this.app.getCurrentPageIndex() === 1) this.app.ui.firstPageCenter();
+                        if (this.app.getSettings().showCover && this.app.getCurrentPageIndex() === 1) this.app.ui.firstPageCenter();
                         else if (this.app.getCurrentPageIndex() === this.app.getPageCount() - 1) this.app.ui.firstPageCenterReverse();
                     }
 
@@ -371,7 +371,7 @@ export class Flip {
                     if (this.app.getOrientation() === Orientation.LANDSCAPE) {
                         if (this.app.getCurrentPageIndex() === 0) {
                             this.app.ui.firstPageCenterReverse();
-                        } else if (this.app.getCurrentPageIndex() === this.app.getPageCount() - 3) {
+                        } else if (this.app.getSettings().showCover && this.app.getCurrentPageIndex() === this.app.getPageCount() - 3) {
                             this.app.ui.firstPageEndCenter();
                         }
                     }
