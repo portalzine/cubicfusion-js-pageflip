@@ -1,5 +1,4 @@
-[![GitHub license](https://img.shields.io/github/license/Nodlik/StPageFlip)](https://github.com/Nodlik/StPageFlip/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/page-flip)](https://www.npmjs.com/package/page-flip) [![npm](https://img.shields.io/npm/dm/page-flip)](https://npmcharts.com/compare/page-flip?minimal=true) [![](https://img.shields.io/badge/support-buymeacoffee-orange)](https://www.buymeacoffee.com/nndlik)
-
+[![GitHub license](https://img.shields.io/github/license/Nodlik/StPageFlip)](https://github.com/Nodlik/StPageFlip/blob/master/LICENSE) 
 # StPageFlip
 
 // Just applying some changes and fixes to the original, to make it more versatile.
@@ -19,11 +18,9 @@ Powerful, simple, and flexible JS Library for creating realistic and beautiful p
 
 ### Installation
 
-You can install the latest version using npm:
+Download bundle from Github
 
-`npm install page-flip`
-
-Or download bundle from Github
+`npm install`
 
 ### Usage
 
