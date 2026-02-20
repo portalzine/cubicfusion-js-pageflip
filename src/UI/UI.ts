@@ -160,9 +160,12 @@ export abstract class UI {
     private getMousePos(x: number, y: number): Point {
         const rect = this.distElement.getBoundingClientRect();
 
+        const scaleX = rect.width / this.distElement.offsetWidth;
+        const scaleY = rect.height / this.distElement.offsetHeight;
+
         return {
-            x: x - rect.left,
-            y: y - rect.top,
+            x: (x - rect.left) / scaleX,
+            y: (y - rect.top) / scaleY,
         };
     }
 
