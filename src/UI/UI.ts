@@ -157,16 +157,16 @@ export abstract class UI {
      * @param x
      * @param y
      */
-    private getMousePos(x: number, y: number): Point {
+    private getMousePos(clientX: number, clientY: number): Point {
         const rect = this.distElement.getBoundingClientRect();
-
-        const scaleX = rect.width / this.distElement.offsetWidth;
-        const scaleY = rect.height / this.distElement.offsetHeight;
-
-        return {
-            x: (x - rect.left) / scaleX,
-            y: (y - rect.top) / scaleY,
+        const pos = {
+            x: clientX - rect.left,
+            y: clientY - rect.top,
         };
+        const scaleX = rect.width  / this.distElement.offsetWidth;
+        const scaleY = rect.height / this.distElement.offsetHeight;
+        if (Math.abs(scaleX - 1) < 0.001) return pos;
+        return { x: pos.x / scaleX, y: pos.y / scaleY };
     }
 
     private checkTarget(targer: EventTarget): boolean {
